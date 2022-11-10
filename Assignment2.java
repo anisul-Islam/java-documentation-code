@@ -1,5 +1,5 @@
 /*
- * Assignment-2
+ * Assignment-2 (Variable and Data type)
  * step 1: create a class called Product
  * step 2: create a main method
  * step 3: declare variables: id, title, price, description, category
