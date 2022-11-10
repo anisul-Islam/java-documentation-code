@@ -1,9 +1,22 @@
 # JAVA Documentation
 
-## 1. Introduction to Java
+## Part-1 Introduction to Java
 
-## 2. Environment setup
+- Introduction to Java
+- Environment setup
+- First Java Program
+- Escape sequence
+- Comments
+- 5 Phases of a Java program
 
-## 3. First Java Program
+## Part-2 Java Basics
 
-## 4. Escape sequence
+- Variables & data types
+- Format specifiers
+- User Input
+- Operators -> Arithmetic, Assignment, Unary, Relational, Logical, Bitwise, Conditional
+- Control statement
+  - conditional control statement: if, else if, else, switch
+  - Loop control statement: for, while, do while
+  - Jump control statement: break, continue, return
+- Control statement
