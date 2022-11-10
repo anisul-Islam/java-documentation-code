@@ -4,5 +4,5 @@
  * step 2: create a main method
  * step 3: declare variables: id, title, price, description, category
  * step 4: get user input for each variables
-  * step 5: print the variables
+* step 5: print the variables
  */
