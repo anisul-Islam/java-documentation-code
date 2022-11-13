@@ -28,6 +28,7 @@
     - Leap year program
     - Vowel/Consonant program
     - small/capital letter
+    - assignments
   - Loop control statement: for, while, do while
   - Jump control statement: break, continue, return
 - Control statement
