@@ -37,8 +37,7 @@ public class Program15 {
           break;
         case 9:
           System.out.println("Nine");
-          break;
-      
+          break;      
         default:
         System.out.println("Not a digit");
       }
