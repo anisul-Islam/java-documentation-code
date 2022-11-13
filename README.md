@@ -40,5 +40,8 @@
     - factorial of n
     - series related program: 1+2+3+ ... + n
     - series related program: 1^2+2^2+3^2+ ... + n^2
+    - multiplication table
+    - prime numbers
+    - prime numbers from 1 to n
   - Jump control statement: break, continue, return
 - Control statement
