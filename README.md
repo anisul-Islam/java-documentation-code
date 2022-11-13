@@ -32,9 +32,11 @@
   - Loop control statement: for, while, do while
     - print 1-100 using for, while, do while loop
     - print a-z
-    - print sum of 1-n numbers
     - print 2,4,...100 / even numbers from 1-100
     - print 1,3,...99 / odd numbers from 1-100
+    - print sum of 1-n numbers
+    - print sum of even numbers from 1-100
+    - print sum of odd numbers from 1-100
     - factorial of n
   - Jump control statement: break, continue, return
 - Control statement
