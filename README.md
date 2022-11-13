@@ -15,8 +15,18 @@
 - Format specifiers
 - User Input
 - Operators -> Arithmetic, Assignment, Unary, Relational, Logical, Bitwise, Conditional
+  - calculator programs - area, temperature
+  - days to time converter program: 10 days = seconds?
 - Control statement
   - conditional control statement: if, else if, else, switch
+    - Even/odd program
+    - Pass/Fail program
+    - valid voter program
+    - Positive/Negative/Zero program
+    - Digit spelling program
+    - Large/small program
+    - Leap year program
+    - Vowel/Consonant program
   - Loop control statement: for, while, do while
   - Jump control statement: break, continue, return
 - Control statement
