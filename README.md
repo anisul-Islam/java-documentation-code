@@ -38,5 +38,7 @@
     - print sum of even numbers from 1-100
     - print sum of odd numbers from 1-100
     - factorial of n
+    - series related program: 1+2+3+ ... + n
+    - series related program: 1^2+2^2+3^2+ ... + n^2
   - Jump control statement: break, continue, return
 - Control statement
