@@ -31,6 +31,8 @@
     - assignments
   - Loop control statement: for, while, do while
     - print 1-100
+    - print a-z
+    - print sum of 1-n numbers
     - print 2,4,...100 / even numbers from 1-100
     - print 1,3,...99 / odd numbers from 1-100
   - Jump control statement: break, continue, return
