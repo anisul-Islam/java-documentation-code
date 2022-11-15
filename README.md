@@ -52,5 +52,6 @@
     - reverse a number
     - palindrome number
     - Armstrong number
+    - user is valid or not by checking username,password
 
 - Control statement
