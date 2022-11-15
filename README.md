@@ -18,6 +18,7 @@
   - calculator programs - area, temperature
   - days to time converter program: 10 days = seconds?
 - Control statement
+
   - conditional control statement: if, else if, else, switch
     - Even/odd program
     - Pass/Fail program
@@ -30,6 +31,8 @@
     - small/capital letter
     - assignments
   - Loop control statement: for, while, do while
+  - Jump control statement: break, continue, return
+
     - print 1-100 using for, while, do while loop
     - print a-z
     - print 2,4,...100 / even numbers from 1-100
@@ -40,8 +43,14 @@
     - factorial of n
     - series related program: 1+2+3+ ... + n
     - series related program: 1^2+2^2+3^2+ ... + n^2
+    - Fibonacci series
     - multiplication table
+    - nested related problems
     - prime numbers
     - prime numbers from 1 to n
-  - Jump control statement: break, continue, return
+    - sum of digits
+    - reverse a number
+    - palindrome number
+    - Armstrong number
+
 - Control statement
