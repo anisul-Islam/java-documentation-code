@@ -53,5 +53,16 @@
     - palindrome number
     - Armstrong number
     - user is valid or not by checking username,password
+    - Pattern related program
 
-- Control statement
+- Array Data structure
+  - introduction to array
+  - sum and average
+  - maximum and minimum
+  - for each in array
+  - 2d array
+  - array matrix
+  - sum of diagonal, upper triangle, lower triangle elements of a matrix
+  - array output test
+  - array sorting
+- Array Data structure
