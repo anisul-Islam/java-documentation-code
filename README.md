@@ -55,14 +55,23 @@
     - user is valid or not by checking username,password
     - Pattern related program
 
-- Array Data structure
-  - introduction to array
-  - sum and average
-  - maximum and minimum
-  - for each in array
-  - 2d array
-  - array matrix
-  - sum of diagonal, upper triangle, lower triangle elements of a matrix
-  - array output test
-  - array sorting
-- Array Data structure
+- Data structure
+  - Array
+    - introduction to array
+    - sum and average
+    - maximum and minimum
+    - for each in array
+    - 2d array
+    - array matrix
+    - sum of diagonal, upper triangle, lower triangle elements of a matrix
+    - array output test
+    - array sorting
+  - ArrayList
+  - LinkedList
+  - HashMap
+  - HashSet
+- String
+  - String
+  - StringBuffer
+  - StringBuilder
+- Date & Time
