@@ -5,12 +5,15 @@
 1. [Basic Java](#1-basic-java)
    - [Introduction to Java](#11-introduction-to-java)
    - [First Java Application](#12-first-java-application)
+     - [Assignment 1: Print User Information](#assigment-1-print-your-information)
    - [Escape sequences](#13-escape-sequences--backslash-characters)
    - [Types of Comments](#14-types-of-comments)
    - [Java program's Phases](#15-java-programs-phases)
    - [Variable & Data types](#16-variable--data-types)
+     - [Assignment-2 (Variable and Data type)](#assignment-2-variable-and-data-type)
    - [Format specifiers](#17-format-specifiers)
-   - []()
+   - [Getting user inputs](#18-getting-user-input)
+   - [Getting user inputs](#18-getting-user-input)
 
 ## 1. Basic Java
 
@@ -99,8 +102,8 @@
   - At first it was names as Oak programming language but in 1994 they named it as Java.
   - Java was officially released in 1995.
 - Java Certifications
-  ![oracle certification](images/oracle-java-certification-path.jpg)
-  ![oracle certification2](images/Java_Certification_Path.gif)
+  - ![oracle certification](images/oracle-java-certification-path.jpg)
+  - ![oracle certification2](images/Java_Certification_Path.gif)
 - Java Versions
   ![java-versions](images/java-versions.png)
 - Environment Setup
@@ -150,7 +153,7 @@ class Program1 {
 }
 ```
 
-- Assigment 1: print your information
+#### Assigment 1: print your information
 
 ### 1.3 Escape sequences / Backslash characters
 
@@ -308,19 +311,19 @@ public class Program4 {
 
 By following these rules and conventions, you can write clean, readable, and maintainable code in Java.
 
-- Assignment 2
+#### Assignment-2 (Variable and Data type)
 
-  ```java
-    /*
-    * Assignment-2 (Variable and Data type)
-    * step 1: create a class called Product
-    * step 2: create a main method
-    * step 3: declare variables: id, title, price, description, category
-    * step 4: assign the following data in main method
-    101,iphone15,1895 euros,perfect product with best image quality, phone,
-    * step 5: print the data
-  */
-  ```
+```java
+  /*
+  * Assignment-2 (Variable and Data type)
+  * step 1: create a class called Product
+  * step 2: create a main method
+  * step 3: declare variables: id, title, price, description, category
+  * step 4: assign the following data in main method
+  101,iphone15,1895 euros,perfect product with best image quality, phone,
+  * step 5: print the data
+*/
+```
 
 ### 1.7 Format specifiers
 
@@ -359,3 +362,34 @@ public class Program5 {
   }
 }
 ```
+
+### 1.8 Getting User Input
+
+```java
+import java.util.Scanner;
+
+class Test {
+  public static void main(String[] args) {
+    try (Scanner input = new Scanner(System.in)) {
+      // String productName = input.next(); // does not count anything after space
+      System.out.print("Enter Product Name: ");
+      String productName = input.nextLine();
+
+      System.out.print("Enter Product Price: ");
+      double productPrice = input.nextDouble();
+
+      System.out.print("Enter Product Quantity: ");
+      int productQuantity = input.nextInt();
+
+      final double PRODUCT_DISCOUNT = 10.133;
+      System.out.println("Product Infos");
+      System.out.println("Product:  " + productName);
+      System.out.println("Price: $" + productPrice);
+      System.out.println("Quantity: " + productQuantity);
+      System.out.println("Discount: " + PRODUCT_DISCOUNT);
+    }
+  }
+}
+```
+
+### 1.9 Format specifiers
