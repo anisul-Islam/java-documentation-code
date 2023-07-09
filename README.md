@@ -31,15 +31,15 @@
    - [Assignment-7 (logical OR operators and if else)](#assignment-7-logical-operators-and-if-else)
    - [Assignment-8 (Logical AND assignment and if-else)](#assignment-8-logical-and-assignment-and-if-else)
    - [Assignment-9 (Call center using switch)](#assignment-9-call-center-using-switch)
-   - [Assignment 10 - find sum of 1-10 using for loop](#assignment-10---find-sum-of-1-10-using-for-loop)
-   - [Assignment 11 - find factorial of n](#assignment-11---find-factorial-of-n)
-   - [Assignment 12 - print sum of odd numbers from m-n](#assignment-12---print-sum-of-odd-numbers-from-m-n)
-   - [Assignment 13 - find nth fibonacci number](#assignment-13---find-nth-fibonacci-number)
-   - [Assignment 14 - Palindrome number](#assignment-14---palindrome-number)
-   - [Assignment 15 - Armstrong number](#assignment-15---armstrong-number)
+   - [Assignment 10 - find sum of 1-10 using for loop](#assignment-10-find-sum-of-1-10-using-for-loop)
+   - [Assignment 11 - find factorial of n](#assignment-11-find-factorial-of-n)
+   - [Assignment 12 - print sum of odd numbers from m-n](#assignment-12-print-sum-of-odd-numbers-from-m-n)
+   - [Assignment 13 - find nth fibonacci number](#assignment-13-find-nth-fibonacci-number)
+   - [Assignment 14 - Palindrome number](#assignment-14-palindrome-number)
+   - [Assignment 15 - Armstrong number](#assignment-15-armstrong-number)
    - [Assignment 16 - find nth fibonacci number](#assignment-16---find-nth-fibonacci-number)
-   - [Assignment 17 - Pattern program](#assignment-17---pattern-program)
-   - [Assignment 18 - (Print the day name)](#assignment-18---print-the-day-name)
+   - [Assignment 17 - Pattern program](#assignment-17-pattern-program)
+   - [Assignment 18 - (Print the day name)](#assignment-18-print-the-day-name)
 
 ## Programs
 
@@ -178,7 +178,7 @@ class Program1 {
 }
 ```
 
-#### Assigment 1: print your information
+#### Assigment 1 (print your information)
 
 ### 1.3 Escape sequences / Backslash characters
 
@@ -1145,7 +1145,7 @@ class Test {
 
   ```
 
-#### Assignment 10 - find sum of 1-10 using for loop
+#### Assignment 10 (find sum of 1-10 using for loop)
 
 ```java
 // find sum of 1-10 using for loop
@@ -1156,7 +1156,7 @@ public class Assignment10 {
 }
 ```
 
-#### Assignment 11 - find factorial of n
+#### Assignment 11 (find factorial of n)
 
 ```java
 // find factorial of n
@@ -1168,7 +1168,7 @@ public class Assignment11 {
 
 ```
 
-#### Assignment 12 - print sum of odd numbers from m-n
+#### Assignment 12 (print sum of odd numbers from m-n)
 
 ```java
 // print sum of odd numbers from m-n
@@ -1180,7 +1180,7 @@ public class Assignment12 {
 
 ```
 
-#### Assignment 13 - find nth fibonacci number
+#### Assignment 13 (find nth fibonacci number)
 
 ```java
 // find nth fibonacci number
@@ -1198,7 +1198,7 @@ public class Assignment13 {
 }
 ```
 
-#### Assignment 14 - Palindrome number
+#### Assignment 14 (Palindrome number)
 
 ```java
 // 1. generate and print palindrome numbers from m-n
@@ -1223,7 +1223,7 @@ public class Assignment14 {
 
 ```
 
-#### Assignment 15 - Armstrong number
+#### Assignment 15 (Armstrong number)
 
 ```java
 // 1. generate and print armstrong numbers from m-n
@@ -1248,7 +1248,7 @@ public class Assignment15 {
 
 ```
 
-#### Assignment 17 - Pattern program
+#### Assignment 17 (Pattern program)
 
 ```java
 // Create a pattern like following one if n=4
@@ -1619,7 +1619,7 @@ public class Program35 {
 
 ```
 
-#### Assignment 18 - (Print the day name)
+#### Assignment 18 (Print the day name)
 
 ```java
 import java.util.Scanner;
@@ -1650,7 +1650,7 @@ public class Assignment18 {
 
 ```
 
-#### Assignment 19 - (Array Output)
+#### Assignment 19 (Array Output)
 
 ```java
 
