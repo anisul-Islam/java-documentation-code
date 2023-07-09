@@ -1,2 +1,3 @@
 *.class
 solutions/
+.DS_Store
