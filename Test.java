@@ -1,31 +1,61 @@
-import java.util.Scanner;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Collections;
+import java.util.Iterator;
 
-//prime number or not
 public class Test {
   public static void main(String[] args) {
-    try (Scanner input = new Scanner(System.in)) {
-      System.out.print("Enter a positive integer: ");
-      int number = input.nextInt();
-      int count = 0;
+    ArrayList<String> fruits = new ArrayList<>();
 
-      if (number < 2) {
-        System.out.println("Not Prime number");
-      } else {
-        for (int i = 2; i <= Math.sqrt(number); i++) {
-          if (number % i == 0) {
-            count++;
-            break;
-          }
-        }
-        if (count == 0) {
-          System.out.println("Prime number");
-        } else {
-          System.out.println("Not Prime number");
-        }
+    // Add elements to the ArrayList
+    fruits.add("Apple");
+    fruits.add("Banana");
+    fruits.add("Orange");
+    fruits.add(3, "Mango");
 
-      }
-    } catch (Exception e) {
-      System.out.println("Invalid input");
+    // remove elements from the ArrayList
+    fruits.remove(3);
+    System.out.println("After removing:  " + fruits);
+    // fruits.removeAll();
+    // fruits.clear();
+
+    // set elements
+    fruits.set(2, "Mango");
+    System.out.println("After setting new item:  " + fruits);
+
+    // Access elements
+    System.out.println("First fruit: " + fruits.get(0));
+
+    // Iterate over elements
+    for (String fruit : fruits) {
+      System.out.println(fruit);
     }
+
+    // Size of the ArrayList
+    System.out.println("Size: " + fruits.size());
+
+    // Check the ArrayList is empty or not
+    System.out.println("isEmpty: " + fruits.isEmpty());
+
+    // Check the ArrayList contains an item or not
+    System.out.println("contains Mango: " + fruits.contains("Mango"));
+
+    // Check the index of an item
+    System.out.println("index of Mango: " + fruits.indexOf("Mango"));
+
+    // print ArrayList using iterator
+    Iterator itr = fruits.iterator();
+    while (itr.hasNext()) {
+      System.out.println(itr.next());
+    }
+
+    ArrayList<Integer> numbers = new ArrayList<>(Arrays.asList(1, 2, 3, 4, 5));
+    System.out.println(numbers);
+
+    Collections.sort(numbers);
+    System.out.println("After sorting in Ascending order: " + numbers);
+
+    Collections.reverse(numbers);
+    System.out.println("After sorting in Descending order: " + numbers);
   }
 }

@@ -18,6 +18,7 @@
      - [Loop control statement](#1102-looping-control-statements)
      - [Jump control statement](#1103-jump-control-statements)
    - [Control Statement2](#110-control-statements)
+   - [Control Statement2]()
 
 2. Intermediate
 3. All assignments
@@ -127,8 +128,8 @@
   - At first it was names as Oak programming language but in 1994 they named it as Java.
   - Java was officially released in 1995.
 - Java Certifications
-  - ![oracle certification](images/oracle-java-certification-path.jpg)
-  - ![oracle certification2](images/Java_Certification_Path.gif)
+  ![oracle certification](images/oracle-java-certification-path.jpg)
+  ![oracle certification2](images/Java_Certification_Path.gif)
 - Java Versions
   ![java-versions](images/java-versions.png)
 - Environment Setup
@@ -1410,9 +1411,9 @@ public class Assignment17 {
 // if username and password does not match print "welcome to the system"
 ```
 
-### 1.11 Array
+### 1.11 Arrays and ArrayList
 
-In Java, an array is a data structure that allows you to store a fixed-size collection of elements of the same type. It provides a convenient way to work with groups of related data. Arrays provide a way to store and manipulate collections of elements in a concise and efficient manner. They are widely used in Java to represent lists of items, collections of data, and matrices. Understanding arrays is fundamental for many programming tasks and algorithms. Here's an explanation of arrays in Java:
+- Array: In Java, an array is a data structure that allows you to store a fixed-size collection of elements of the same type. It provides a convenient way to work with groups of related data. Arrays provide a way to store and manipulate collections of elements in a concise and efficient manner. They are widely used in Java to represent lists of items, collections of data, and matrices. Understanding arrays is fundamental for many programming tasks and algorithms. Here's an explanation of arrays in Java:
 
 1. Declaration and Initialization:
 
@@ -1447,6 +1448,15 @@ In Java, an array is a data structure that allows you to store a fixed-size coll
 6. Multidimensional Arrays:
 
    - Java also supports multidimensional arrays, where each element is itself an array. For example: `int[][] matrix = new int[3][4];`
+   - we can only assign row size and later the column.
+
+   ```java
+   int[][] numbers = new int[4][];
+   numbers[0] = new int[1];
+   numbers[1] = new int[2];
+   numbers[2] = new int[3];
+   numbers[3] = new int[4];
+   ```
 
 7. Array Copying:
    - Java provides the `System.arraycopy()` method and the `Arrays.copyOf()` method to copy the elements of one array to another.
@@ -1619,6 +1629,104 @@ public class Program35 {
 
 ```
 
+- Create programs based on Array output examples
+
+```java
+/**
+ * 0 1 2 3 4
+ * 5 6 7 8 9
+ * 10 11 12 13 14
+ * 15 16 17 18 19
+*/
+public class Test {
+  public static void main(String[] args) {
+    int[][] A = new int[4][5];
+    int count = 0;
+
+    // assign values to the 2d array
+    for (int i = 0; i < 4; i++) {
+      for (int j = 0; j < 5; j++) {
+        A[i][j] = count++;
+      }
+    }
+
+    // print values to the 2d array
+    for (int i = 0; i < 4; i++) {
+      for (int j = 0; j < 5; j++) {
+        System.out.print(A[i][j] + " ");
+      }
+      System.out.println();
+    }
+  }
+}
+```
+
+```java
+/**
+ * 0
+ * 1 2
+ * 3 4 5
+ * 6 7 8 9
+*/
+
+public class Test {
+  public static void main(String[] args) {
+    int[][] A = new int[4][];
+    A[0] = new int[1];
+    A[1] = new int[2];
+    A[2] = new int[3];
+    A[3] = new int[4];
+    int count = 0;
+
+    // assign values to the 2d array
+    for (int i = 0; i < A.length; i++) {
+      for (int j = 0; j < i + 1; j++) {
+        A[i][j] = count++;
+      }
+    }
+
+    // print values to the 2d array
+    for (int i = 0; i < A.length; i++) {
+      for (int j = 0; j < i + 1; j++) {
+        System.out.print(A[i][j] + " ");
+      }
+      System.out.println();
+    }
+  }
+}
+```
+
+- Array sorting (Ascending and descending)
+
+```java
+import java.util.Arrays;
+
+public class Test {
+  public static void main(String[] args) {
+    int[] numbers = { 10, 4, 32, 45, 99, 2 };
+
+    Arrays.sort(numbers);
+
+    System.out.print("Ascending order: ");
+    for (int i = 0; i < numbers.length; i++) {
+      System.out.print(" " + numbers[i]);
+    }
+    System.out.println();
+
+    System.out.print("Descending order: ");
+    for (int i = numbers.length - 1; i >= 0; i--) {
+      System.out.print(" " + numbers[i]);
+    }
+    System.out.println();
+
+    String[] names = { "Pinky", "Anisul", "Liton", "Sweety" };
+    Arrays.sort(names);
+    // we can sort the array just like last time
+  }
+}
+
+```
+
 #### Assignment 18 (Print the day name)
 
 ```java
@@ -1650,8 +1758,237 @@ public class Assignment18 {
 
 ```
 
-#### Assignment 19 (Array Output)
+#### Assignment 19 (Array Operations)
+
+- Assignment: Array Operations
+
+Write a Java program that performs various operations on an array of integers. Your program should implement the following functionality:
+
+1. Initialization: Initialize an array of integers with the following values: {5, 10, 15, 20, 25}.
+
+2. Sum of Elements: Calculate and print the sum of all elements in the array.
+
+3. Largest Element: Find and print the largest element in the array.
+
+4. Smallest Element: Find and print the smallest element in the array.
+
+5. Average: Calculate and print the average value of all elements in the array.
+
+6. Search: Prompt the user to enter a number to search in the array. Check if the number exists in the array and print an appropriate message.
+
+7. Reverse Order: Reverse the order of elements in the array and print the reversed array.
+
+You can structure your program with appropriate methods for each operation and a main method to run the program. Make sure to provide clear output and handle any necessary user input.
+
+Here's a skeleton code for the assignment:
 
 ```java
+import java.util.Scanner;
 
+public class ArrayOperations {
+    public static void main(String[] args) {
+        int[] numbers = {5, 10, 15, 20, 25};
+
+        // Call the methods for each operation
+        int sum = calculateSum(numbers);
+        System.out.println("Sum of elements: " + sum);
+
+        int largest = findLargest(numbers);
+        System.out.println("Largest element: " + largest);
+
+        int smallest = findSmallest(numbers);
+        System.out.println("Smallest element: " + smallest);
+
+        double average = calculateAverage(numbers);
+        System.out.println("Average: " + average);
+
+        Scanner input = new Scanner(System.in);
+        System.out.print("Enter a number to search: ");
+        int searchNumber = input.nextInt();
+        boolean found = searchNumber(numbers, searchNumber);
+        if (found) {
+            System.out.println(searchNumber + " exists in the array.");
+        } else {
+            System.out.println(searchNumber + " does not exist in the array.");
+        }
+
+        int[] reversed = reverseArray(numbers);
+        System.out.println("Reversed array: ");
+        for (int num : reversed) {
+            System.out.print(num + " ");
+        }
+        System.out.println();
+    }
+
+    public static int calculateSum(int[] arr) {
+        // Calculate the sum of elements
+        // Implement your logic here
+    }
+
+    public static int findLargest(int[] arr) {
+        // Find the largest element
+        // Implement your logic here
+    }
+
+    public static int findSmallest(int[] arr) {
+        // Find the smallest element
+        // Implement your logic here
+    }
+
+    public static double calculateAverage(int[] arr) {
+        // Calculate the average of elements
+        // Implement your logic here
+    }
+
+    public static boolean searchNumber(int[] arr, int target) {
+        // Search for the target number in the array
+        // Implement your logic here
+    }
+
+    public static int[] reverseArray(int[] arr) {
+        // Reverse the order of elements in the array
+        // Implement your logic here
+    }
+}
 ```
+
+You need to complete the implementation of each method by adding the appropriate logic to perform the operations. Once you have completed the code, you can run the program to see the results of each operation on the given array of integers.
+
+Feel free to customize or extend the assignment according to your needs. Good luck!
+
+- ArrayList: Array is static or fixed where ArrayList is dynamic and resizeable. Array supports for and for each loop where ArrayList supports for each loop and iterator. Array is faster than ArrayList. Array.length vs ArrayList.size(). some common methods are - size(), add(), addAll(),remove(), set(), get(), clear(), isEmpty(), contains(), indexOf(), equals()
+
+  - Example of ArrayList
+
+  ```java
+    import java.util.ArrayList;
+    import java.util.Arrays;
+    import java.util.Collections;
+    import java.util.Iterator;
+
+    public class Test {
+      public static void main(String[] args) {
+        ArrayList<String> fruits = new ArrayList<>();
+
+        // Add elements to the ArrayList
+        fruits.add("Apple");
+        fruits.add("Banana");
+        fruits.add("Orange");
+        fruits.add(3, "Mango");
+
+        // remove elements from the ArrayList
+        fruits.remove(3);
+        System.out.println("After removing:  " + fruits);
+        // fruits.removeAll();
+        // fruits.clear();
+
+        // set elements
+        fruits.set(2, "Mango");
+        System.out.println("After setting new item:  " + fruits);
+
+        // Access elements
+        System.out.println("First fruit: " + fruits.get(0));
+
+        // Iterate over elements
+        for (String fruit : fruits) {
+          System.out.println(fruit);
+        }
+
+        // Size of the ArrayList
+        System.out.println("Size: " + fruits.size());
+
+        // Check the ArrayList is empty or not
+        System.out.println("isEmpty: " + fruits.isEmpty());
+
+        // Check the ArrayList contains an item or not
+        System.out.println("contains Mango: " + fruits.contains("Mango"));
+
+        // Check the index of an item
+        System.out.println("index of Mango: " + fruits.indexOf("Mango"));
+
+        // print ArrayList using iterator
+        Iterator itr = fruits.iterator();
+        while (itr.hasNext()) {
+          System.out.println(itr.next());
+        }
+
+        ArrayList<Integer> numbers = new ArrayList<>(Arrays.asList(1, 2, 3, 4, 5));
+        System.out.println(numbers);
+
+        Collections.sort(numbers);
+        System.out.println("After sorting in Ascending order: " + numbers);
+
+        Collections.reverse(numbers);
+        System.out.println("After sorting in Descending order: " + numbers);
+      }
+    }
+  ```
+
+### 1.12 String Manipulation
+
+In Java, the `String` class is a built-in class that represents a sequence of characters. It is used to store and manipulate textual data. Strings in Java are immutable, meaning that their values cannot be changed once created. When you perform operations on strings, such as concatenation or substring extraction, new string objects are created.
+
+The Java String class offers a wide range of methods and functionalities for working with strings efficiently. You can refer to the Java documentation for a comprehensive list of methods available in the `String` class.
+
+Here are some key features and operations related to strings in Java:
+
+1. String Declaration and Initialization:
+
+   - Strings can be declared and initialized using the `String` class. For example:
+
+     ```java
+     String str1 = "Hello";  // Using string literal
+     String str2 = new String("World");  // Using the constructor
+     ```
+
+2. String Concatenation:
+
+   - Strings can be concatenated using the `+` operator or the `concat()` method. For example:
+
+     ```java
+     String greeting = str1 + " " + str2;
+     String fullGreeting = str1.concat(" ").concat(str2);
+     ```
+
+3. String Length:
+
+   - The length of a string can be obtained using the `length()` method. For example:
+
+     ```java
+     int length = greeting.length();
+     ```
+
+4. Accessing Characters:
+
+   - Individual characters within a string can be accessed using the `charAt()` method. The index starts at 0. For example:
+
+     ```java
+     char firstChar = greeting.charAt(0);
+     ```
+
+5. Substrings:
+
+   - Substrings can be extracted from a string using the `substring()` method. For example:
+
+     ```java
+     String substring = greeting.substring(6, 10); // Extracts "World"
+     ```
+
+6. String Comparison:
+
+   - String equality can be checked using the `equals()` method or the `==` operator. For example:
+
+     ```java
+     boolean isEqual = str1.equals(str2);
+     boolean isSameObject = str1 == str2;
+     ```
+
+7. String Manipulation:
+   - The `String` class provides various methods for manipulating strings, such as converting case (e.g., `toUpperCase()`, `toLowerCase()`), removing whitespace (e.g., `trim()`), replacing characters or substrings (e.g., `replace()`, `replaceAll()`), and more.
+
+## 2. Intermediate Java
+
+### 2.1 Collections Framework
+
+![collection](images/ClassificationofDataStructure.jpeg)
+![data structure and api in java](images/data-structures-and-java-apis2.jpg)
