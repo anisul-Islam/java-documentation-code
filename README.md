@@ -2467,7 +2467,7 @@ class Test {
 
 #### Inheritance
 
-- Inheritance allows creating new classes (child classes) based on existing classes (parent classes). Child classes inherit the properties and behaviors of their parent classes, enabling code reuse and creating a hierarchical structure.
+- Inheritance allows creating new classes (child classes / sub classes / dervied classes) based on existing classes (parent classes /super classes /base classes). Child classes inherit the properties and behaviors of their parent classes, enabling code reuse and creating a hierarchical structure. For method overriding and make parent child relationship we need inheritance.
 
   ```java
   public class ElectricCar extends Car {
@@ -2480,7 +2480,227 @@ class Test {
   }
   ```
 
+  - More simple inheritance example
+
+  ```java
+    //
+    class Person {
+        String name;
+        int age;
+
+        public void printDetails1() {
+          System.out.println("Name: " + name);
+          System.out.println("Age: " + age);
+        }
+      }
+
+      class Teacher extends Person {
+        double salary;
+
+        public void printDetails2() {
+          System.out.println("Name: " + name);
+          System.out.println("Age: " + age);
+          System.out.println("salary: " + salary);
+        }
+      }
+
+      class Test {
+        public static void main(String[] args) {
+            Teacher t1 = new Teacher();
+            Teacher t2 = new Teacher();
+
+            t1.name = "Anisul Islam";
+            t1.age = 33;
+            t1.salary = 4.500;
+            t1.printDetails2();
+
+            t2.name = "Emraj Chowdhury";
+            t2.age = 29;
+            t2.salary = 2.500;
+            t2.printDetails2();
+        }
+      }
+  ```
+
+  - Inheriting private members is not possible but we can create public getter and setter methods to use private members of a class.
+
+  ```java
+      class Person {
+        private String name;
+        private int age;
+
+        public void setName(String name) {
+          this.name = name;
+        }
+
+        public void setAge(int age) {
+          this.age = age;
+        }
+
+        public String getName() {
+          return name;
+        }
+
+        public int getAge() {
+          return age;
+        }
+
+        public void printDetails1() {
+          System.out.println("Name: " + name);
+          System.out.println("Age: " + age);
+        }
+      }
+
+      class Teacher extends Person {
+        private double salary;
+
+        public void setSalary(double salary) {
+          this.salary = salary;
+        }
+
+        public double getSalary() {
+          return salary;
+        }
+
+        public void printDetails2() {
+          System.out.println("Name: " + getName());
+          System.out.println("Age: " + getAge());
+          System.out.println("salary: " + getSalary());
+        }
+      }
+
+      class Test {
+        public static void main(String[] args) {
+          Person p = new Person();
+          Teacher t1 = new Teacher();
+
+          // instanceof operator
+          System.out.println(p instanceof Person);
+          System.out.println(p instanceof Teacher);
+
+
+          t1.setName("Anisul Islam");
+          t1.setAge(33);
+          t1.setSalary(4.500);
+          t1.printDetails2();
+
+          Teacher t2 = new Teacher();
+          t2.setName("Anisul Islam");
+          t2.setAge(33);
+          t2.setSalary(4.500);
+          t2.printDetails2();
+        }
+
+    }
+  ```
+
+  - Types of Inheritance: Single Inheritane (A<- B), multilevel inheritance (A <- B <- C), Hierarchical Inheritance (A<-B, A<-C, A<-D multiple sub class is dervied from single subclass), Multiple Inheritance (dimand shape A<-B, A<-C, B<-D, C<-D one subclass trying to derive 2 superclasses)
+
+- method overriding
+
+  - method overriding is a process of declaring a method in subclass which is already present in superclass. It helps us to do code reuse.
+
+  ```java
+    class Person {
+        private String name;
+        private int age;
+
+        public void setName(String name) {
+          this.name = name;
+        }
+
+        public void setAge(int age) {
+          this.age = age;
+        }
+
+        public String getName() {
+          return name;
+        }
+
+        public int getAge() {
+          return age;
+        }
+
+        public void printDetails() {
+          System.out.println("Name: " + name);
+          System.out.println("Age: " + age);
+        }
+      }
+
+      class Teacher extends Person {
+        private double salary;
+
+        public void setSalary(double salary) {
+          this.salary = salary;
+        }
+
+        public double getSalary() {
+          return salary;
+        }
+
+        public void printDetails() {
+          System.out.println("Name: " + getName());
+          System.out.println("Age: " + getAge());
+          System.out.println("salary: " + getSalary());
+        }
+      }
+  ```
+
 - method overloading vs overriding
+
+  - Can you override static method? No, cause static method bound to the class not to object.
+  - Can you override java main method?: No, because main is a static method.
+
+    Overloading:
+
+    1. Definition: Overloading occurs when multiple methods in the same class have the same name but different parameters (either different types or different numbers of parameters).
+    2. Purpose: Overloading is used to provide multiple methods with the same name but different behaviors or functionalities.
+    3. Occurrence: Overloading happens within the same class.
+    4. Inheritance: Overloading is not related to inheritance.
+    5. Signature: Overloaded methods must have a different method signature, which includes the method name and parameter list.
+    6. Return Type: Overloaded methods may or may not have the same return type.
+    7. Example:
+
+    ```java
+    public class Calculator {
+        public int add(int a, int b) {
+            return a + b;
+        }
+
+        public int add(int a, int b, int c) {
+            return a + b + c;
+        }
+    }
+    ```
+
+    Overriding:
+
+    1. Definition: Overriding occurs when a subclass provides its own implementation of a method that is already defined in its superclass.
+    2. Purpose: Overriding is used to modify or extend the behavior of an inherited method in a subclass.
+    3. Occurrence: Overriding happens in a subclass that extends a superclass.
+    4. Inheritance: Overriding is related to inheritance.
+    5. Signature: Overridden methods must have the same method signature, including the method name, parameter list, and return type.
+    6. Annotation: The `@Override` annotation is used to indicate that a method is intended to override a superclass method (optional but recommended).
+    7. Example:
+
+    ```java
+    public class Animal {
+        public void makeSound() {
+            System.out.println("Animal makes a sound.");
+        }
+    }
+
+    public class Cat extends Animal {
+        @Override
+        public void makeSound() {
+            System.out.println("Cat meows.");
+        }
+    }
+    ```
+
+    In summary, overloading is about providing multiple methods with the same name but different parameters within the same class, while overriding is about providing a new implementation of an inherited method in a subclass. Overloading is determined at compile-time based on the method's signature, while overriding is determined at runtime based on the actual object type.
+
+- Why Java does not support multiple inheritance?
 - super, this, final keyword
 
 #### Polymorphism

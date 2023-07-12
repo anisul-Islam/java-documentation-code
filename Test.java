@@ -1,49 +1,65 @@
-class Car {
-  // properties
-  String brand, color;
-  int year;
+class Person {
+  private String name;
+  private int age;
 
-  // constructor - same name as the class it belongs to and no return type not even void
-  Car(String brand, String color, int year) {
-    this.brand = brand;
-    this.color = color;
-    this.year = year;
+  public void setName(String name) {
+    this.name = name;
   }
 
-  // behaviours
-  void startEngine() {
-    System.out.println("Engine started");
+  public void setAge(int age) {
+    this.age = age;
   }
 
-  void drive() {
-    System.out.println("Car is driving");
+  public String getName() {
+    return name;
   }
 
-  void printDetails() {
-    System.out.println("Car details: ");
-    System.out.println("---------------");
-    System.out.println("Brand: " + brand);
-    System.out.println("Color: " + color);
-    System.out.println("Year: " + year);
-    System.out.println();
+  public int getAge() {
+    return age;
   }
 
+  public void printDetails() {
+    System.out.println("Name: " + name);
+    System.out.println("Age: " + age);
+  }
+}
+
+class Teacher extends Person {
+  private double salary;
+
+  public void setSalary(double salary) {
+    this.salary = salary;
+  }
+
+  public double getSalary() {
+    return salary;
+  }
+
+  public void printDetails() {
+    System.out.println("Name: " + getName());
+    System.out.println("Age: " + getAge());
+    System.out.println("salary: " + getSalary());
+  }
 }
 
 class Test {
   public static void main(String[] args) {
-    // create Car objets
-    Car car1 = new Car("Toyota", "red", 2016);
-    Car car2 = new Car("Honda", "blue", 2019);
+    Person p = new Person();
+    Teacher t1 = new Teacher();
 
-    // priniting cars details
-    car1.printDetails();
-    car2.printDetails();
+    System.out.println(p instanceof Person);
+    System.out.println(p instanceof Teacher);
 
-    // Invoke object behaviors
-    car1.startEngine();
-    car1.drive();
-    car2.startEngine();
-    car2.drive();
+    t1.setName("Anisul Islam");
+    t1.setAge(33);
+    t1.setSalary(4.500);
+    t1.printDetails();
+
+    Teacher t2 = new Teacher();
+    t2.setName("Anisul Islam");
+    t2.setAge(33);
+    t2.setSalary(4.500);
+    t2.printDetails();
   }
+
 }
