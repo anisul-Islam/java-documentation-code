@@ -1,61 +1,49 @@
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Collections;
-import java.util.Iterator;
+class Car {
+  // properties
+  String brand, color;
+  int year;
 
-public class Test {
+  // constructor - same name as the class it belongs to and no return type not even void
+  Car(String brand, String color, int year) {
+    this.brand = brand;
+    this.color = color;
+    this.year = year;
+  }
+
+  // behaviours
+  void startEngine() {
+    System.out.println("Engine started");
+  }
+
+  void drive() {
+    System.out.println("Car is driving");
+  }
+
+  void printDetails() {
+    System.out.println("Car details: ");
+    System.out.println("---------------");
+    System.out.println("Brand: " + brand);
+    System.out.println("Color: " + color);
+    System.out.println("Year: " + year);
+    System.out.println();
+  }
+
+}
+
+class Test {
   public static void main(String[] args) {
-    ArrayList<String> fruits = new ArrayList<>();
+    // create Car objets
+    Car car1 = new Car("Toyota", "red", 2016);
+    Car car2 = new Car("Honda", "blue", 2019);
 
-    // Add elements to the ArrayList
-    fruits.add("Apple");
-    fruits.add("Banana");
-    fruits.add("Orange");
-    fruits.add(3, "Mango");
+    // priniting cars details
+    car1.printDetails();
+    car2.printDetails();
 
-    // remove elements from the ArrayList
-    fruits.remove(3);
-    System.out.println("After removing:  " + fruits);
-    // fruits.removeAll();
-    // fruits.clear();
-
-    // set elements
-    fruits.set(2, "Mango");
-    System.out.println("After setting new item:  " + fruits);
-
-    // Access elements
-    System.out.println("First fruit: " + fruits.get(0));
-
-    // Iterate over elements
-    for (String fruit : fruits) {
-      System.out.println(fruit);
-    }
-
-    // Size of the ArrayList
-    System.out.println("Size: " + fruits.size());
-
-    // Check the ArrayList is empty or not
-    System.out.println("isEmpty: " + fruits.isEmpty());
-
-    // Check the ArrayList contains an item or not
-    System.out.println("contains Mango: " + fruits.contains("Mango"));
-
-    // Check the index of an item
-    System.out.println("index of Mango: " + fruits.indexOf("Mango"));
-
-    // print ArrayList using iterator
-    Iterator itr = fruits.iterator();
-    while (itr.hasNext()) {
-      System.out.println(itr.next());
-    }
-
-    ArrayList<Integer> numbers = new ArrayList<>(Arrays.asList(1, 2, 3, 4, 5));
-    System.out.println(numbers);
-
-    Collections.sort(numbers);
-    System.out.println("After sorting in Ascending order: " + numbers);
-
-    Collections.reverse(numbers);
-    System.out.println("After sorting in Descending order: " + numbers);
+    // Invoke object behaviors
+    car1.startEngine();
+    car1.drive();
+    car2.startEngine();
+    car2.drive();
   }
 }

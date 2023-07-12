@@ -17,8 +17,10 @@
      - [Conditional control statement](#1101-conditional-control-statements)
      - [Loop control statement](#1102-looping-control-statements)
      - [Jump control statement](#1103-jump-control-statements)
-   - [Control Statement2](#110-control-statements)
-   - [Control Statement2]()
+   - [Control Statement](#110-control-statements)
+   - [Arrays and ArrayList](#111-arrays-and-arraylist)
+   - [String Manipulation](#112-string-manipulation)
+   - [Object Oriented Programming](#112-string-manipulation)
 
 2. Intermediate
 3. All assignments
@@ -1984,7 +1986,526 @@ Here are some key features and operations related to strings in Java:
      ```
 
 7. String Manipulation:
+
    - The `String` class provides various methods for manipulating strings, such as converting case (e.g., `toUpperCase()`, `toLowerCase()`), removing whitespace (e.g., `trim()`), replacing characters or substrings (e.g., `replace()`, `replaceAll()`), and more.
+
+8. Conversion between String and Primitive Data type:
+
+   ```java
+      // other types to String
+      int number = 100;
+      String s = Integer.toString(number);
+      System.out.println(s);
+
+      double number2 = 100;
+      String s1 = Double.toString(number2);
+      System.out.println(s1);
+
+      boolean b = true;
+      String s2 = Boolean.toString(b);
+      System.out.println(s2);
+
+      // String to other types
+      String n = "32";
+      System.out.println(Integer.parseInt(n));
+      System.out.println(Double.parseDouble(n));
+      System.out.println(Double.valueOf(n));
+
+   ```
+
+9. Wrapper Class - Autoboxing, unboxing
+
+Autoboxing and unboxing are features in Java that automatically convert between primitive types and their corresponding wrapper classes. These features were introduced to simplify the code and provide a more intuitive way of working with primitive types and their object counterparts.
+
+- Autoboxing is the automatic conversion of a primitive type to its corresponding wrapper class. - When you assign a primitive value to a variable of the corresponding wrapper class, autoboxing automatically wraps the primitive value into an object of the wrapper class.
+
+  ```java
+  int number = 42;
+  Integer wrappedNumber = number; // Autoboxing from int to Integer
+  ```
+
+- Unboxing is the automatic conversion of a wrapper class object to its corresponding primitive type.
+
+  - When you assign a wrapper class object to a variable of the corresponding primitive type, unboxing automatically extracts the primitive value from the object.
+  - Example:
+
+    ```java
+    Integer wrappedNumber = 42;
+    int number = wrappedNumber; // Unboxing from Integer to int
+    ```
+
+- Autoboxing and Unboxing in Expressions:
+
+  - Autoboxing and unboxing also apply to expressions involving primitive types and their corresponding wrapper classes.
+
+  - Example:
+
+    ```java
+    Integer a = 5; // Autoboxing
+    Integer b = 10;
+    int sum = a + b; // Unboxing, addition, and autoboxing
+    ```
+
+  Autoboxing and unboxing provide a convenient way to work with both primitive types and their object counterparts without requiring explicit conversions. They simplify code readability and reduce the need for manual conversions between primitive types and wrapper classes.
+
+  However, it's important to note that autoboxing and unboxing can have performance implications in certain scenarios, as they involve object creation and method calls. Care should be taken when using autoboxing and unboxing in performance-critical code or in situations where memory usage needs to be optimized.
+
+- Random number generator
+
+```java
+import java.util.Random;
+
+public class RandomGeneratorExample {
+    public static void main(String[] args) {
+        Random random = new Random();
+
+        // Generating random integers
+        int randomInt = random.nextInt();
+        System.out.println("Random Integer: " + randomInt);
+
+        // Generating random integers within a specific range
+        int randomInRange = random.nextInt(100); // Generates integers from 0 to 99
+        System.out.println("Random Integer in Range: " + randomInRange);
+
+        // Generating random doubles
+        double randomDouble = random.nextDouble();
+        System.out.println("Random Double: " + randomDouble);
+
+        // Generating random booleans
+        boolean randomBoolean = random.nextBoolean();
+        System.out.println("Random Boolean: " + randomBoolean);
+    }
+}
+
+```
+
+### 1.13 Object Oriented Programming
+
+- Object-Oriented Programming (OOP) is a programming paradigm that organizes code into objects, which represent real-world entities. Java is an object-oriented programming language that fully supports OOP principles. OOP key concepts: Inheritance, Encapsulation, Abstraction, Polymorphism
+
+#### Classes
+
+- Class: A class is a template from which individual object is created. A class is a blueprint for creating objects. It defines the properties (attributes) and behaviors (methods) that objects of that class will have.
+
+```java
+public class Car {
+    // Properties
+    String brand;
+    String color;
+    int year;
+
+    // Behaviors
+    void startEngine() {
+        System.out.println("Engine started!");
+    }
+
+    void drive() {
+        System.out.println("Car is driving.");
+    }
+}
+```
+
+#### Object
+
+- Object: Any class type variable is known as object. An object is an instance of a class. It represents a specific entity based on the class blueprint. Objects are created using the new keyword and the class constructor.
+
+```java
+public class Main {
+    public static void main(String[] args) {
+        // Create Car objects
+        Car car1 = new Car();
+        Car car2 = new Car();
+
+        // Set object properties
+        car1.brand = "Toyota";
+        car1.color = "Red";
+        car1.year = 2020;
+
+        car2.brand = "Honda";
+        car2.color = "Blue";
+        car2.year = 2019;
+
+        // Invoke object behaviors
+        car1.startEngine();
+        car1.drive();
+        car2.startEngine();
+        car2.drive();
+
+        // priniting cars details
+        System.out.println("Car1 details: ");
+        System.out.println("Brand: " + car1.brand);
+        System.out.println("Color: " + car1.color);
+        System.out.println("Year: " + car1.year);
+
+        System.out.println("Car2 details: ");
+        System.out.println("Brand: " + car2.brand);
+        System.out.println("Color: " + car2.color);
+        System.out.println("Year: " + car2.year);
+    }
+}
+```
+
+- Introducing parametrized methods inside the car class
+
+```java
+class Car {
+  // properties
+  String brand, color;
+  int year;
+
+  // behaviours
+  void startEngine() {
+    System.out.println("Engine started");
+  }
+
+  void drive() {
+    System.out.println("Car is driving");
+  }
+
+  void setDetails(String brandName, String colorName, int manufactureYear) {
+    brand = brandName;
+    color = colorName;
+    year = manufactureYear;
+  }
+
+  void printDetails() {
+    System.out.println("Car details: ");
+    System.out.println("---------------");
+    System.out.println("Brand: " + brand);
+    System.out.println("Color: " + color);
+    System.out.println("Year: " + year);
+    System.out.println();
+  }
+
+}
+
+class Test {
+  public static void main(String[] args) {
+    // create Car objets
+    Car car1 = new Car();
+    Car car2 = new Car();
+
+    // set object properties
+    car1.setDetails("Toyota", "red", 2016);
+    car2.setDetails("Honda", "blue", 2019);
+
+    // priniting cars details
+    car1.printDetails();
+    car2.printDetails();
+
+    // Invoke object behaviors
+    car1.startEngine();
+    car1.drive();
+    car2.startEngine();
+    car2.drive();
+  }
+}
+```
+
+#### Constructor
+
+- Constructor is a special type of method which can help us to initialize object.
+- Constructor does not need to be called.
+- The constructor has the same name as the class it belongs to.
+- It does not have a return type, not even void.
+- types: default and parametrized constructor
+
+  - Constructor example
+
+  ```java
+  class Car {
+    // properties
+    String brand, color;
+    int year;
+
+    // constructor - same name as the class it belongs to and no return type not even void
+    Car(String brand, String color, int year) {
+      this.brand = brand;
+      this.color = color;
+      this.year = year;
+    }
+
+    // behaviours
+    void startEngine() {
+      System.out.println("Engine started");
+    }
+
+    void drive() {
+      System.out.println("Car is driving");
+    }
+
+    void printDetails() {
+      System.out.println("Car details: ");
+      System.out.println("---------------");
+      System.out.println("Brand: " + brand);
+      System.out.println("Color: " + color);
+      System.out.println("Year: " + year);
+      System.out.println();
+    }
+
+  }
+
+  class Test {
+    public static void main(String[] args) {
+      // create Car objets
+      Car car1 = new Car("Toyota", "red", 2016);
+      Car car2 = new Car("Honda", "blue", 2019);
+
+      // priniting cars details
+      car1.printDetails();
+      car2.printDetails();
+
+      // Invoke object behaviors
+      car1.startEngine();
+      car1.drive();
+      car2.startEngine();
+      car2.drive();
+    }
+  }
+  ```
+
+  - Overloading Constructors where we have constructors with same name but the parameter numbers are different.
+
+  ```java
+  class Car {
+    // properties
+    String brand, color;
+    int year;
+
+    // constructor - same name as the class it belongs to and no return type not even void
+    Car(String brand, String color, int year) {
+      this.brand = brand;
+      this.color = color;
+      this.year = year;
+    }
+
+    // constructor overloading: same name different parameters
+     Car(String brand, String color) {
+      this.brand = brand;
+      this.color = color;
+    }
+
+    Car() {
+      System.out.println("Default constructor");
+    }
+
+    // behaviours
+    void startEngine() {
+      System.out.println("Engine started");
+    }
+
+    void drive() {
+      System.out.println("Car is driving");
+    }
+
+    void printDetails() {
+      System.out.println("Car details: ");
+      System.out.println("---------------");
+      System.out.println("Brand: " + brand);
+      System.out.println("Color: " + color);
+      System.out.println("Year: " + year);
+      System.out.println();
+    }
+
+  }
+
+  class Test {
+    public static void main(String[] args) {
+      // create Car objets
+      Car car1 = new Car("Toyota", "red", 2016);
+      Car car2 = new Car("Honda", "blue", 2019);
+      Car car3 = new Car("Peugeot", "black");
+      Car car4 = new Car();
+
+      // priniting cars details
+      car1.printDetails();
+      car2.printDetails();
+
+      // Invoke object behaviors
+      car1.startEngine();
+      car1.drive();
+      car2.startEngine();
+      car2.drive();
+    }
+  }
+  ```
+
+- Differences between the constructor and method
+
+#### static variable, static method and static block
+
+- static keyword is used for memory management. It saves memory by sharing variables with different objects. It's important to note that static members belong to the class and are not specific to any object. They can be accessed using the class name followed by the member name, such as `ClassName.staticMember`.
+
+1. Static Variables:
+
+   - Static variables, also known as class variables, are shared among all instances of a class. They are declared using the `static` keyword and have a single copy that is shared by all objects of the class.
+   - Example:
+
+     ```java
+     public class Counter {
+         static int count; // Static variable
+
+         public Counter() {
+             count++; // Increment count in the constructor
+         }
+     }
+     ```
+
+2. Static Block:
+
+   - A static block is a static initializer block that is used to initialize static variables or perform any other one-time initialization tasks for the class.
+   - It is executed only once when the class is loaded into memory, before any object of that class is created or any static method is called. static block is called even before main method.
+   - Example:
+
+     ```java
+     public class StaticBlockExample {
+        static int id;
+        static String name;
+
+         static {
+             // Static block
+             id = 101;
+             name = "Anisul";
+             System.out.println("Static block executed!");
+         }
+
+         static void display(){
+            System.out.println("Id: "+id);
+            System.out.println("Name: "+name);
+         }
+
+         public static void main(String[] args) {
+             System.out.println("Main method executed!");
+             StaticBlockExample.display();
+         }
+     }
+     ```
+
+3. Static Methods:
+
+   - Static methods are associated with the class itself, rather than with individual objects of the class. They are declared using the `static` keyword and can be called directly using the class name, without creating an object. The main method is the most common example of static method.
+   - Static methods cannot access instance variables or call instance methods directly, as they are not associated with any specific object.
+   - Example:
+
+     ```java
+     public class StaticMethod {
+         public int add(int a, int b) {
+             return a + b;
+         }
+
+         public static int multiply(int a, int b) {
+             return a * b;
+         }
+     }
+     public class Test{
+        public static void main(String[] args){
+          int result = StaticMethod.multiply(20,30);
+           System.out.println(result);
+
+           StaicMethod sm = new StaticMethod();
+           result = sm.add(20,30);
+           System.out.println(result);
+        }
+     }
+     ```
+
+     - static method can't use non static members. this and super can not be used.
+
+     ```java
+         public class StaticMethod {
+            public int add(int a, int b) {
+                return a + b;
+            }
+
+            public static int multiply(int a, int b) {
+                int x = add(20,30); // error here
+                return a * b;
+            }
+        }
+     ```
+
+- variable types: local (variable is decalred inside a method/constructor/block), instance variables (decalred inside class but outside the method and not decared as static) and class/static variable.
+
+#### Encapsulation
+
+- Encapsulation is the practice of bundling related properties and behaviors within a class and providing access to them through methods. It helps in data hiding and protects the internal state of objects. 4 types of access modifiers: private, default, protected, public.
+
+  ```java
+  public class Car {
+      private String brand;
+      private String color;
+      private int year;
+
+      // Getter methods
+      public String getBrand() {
+          return brand;
+      }
+
+      public String getColor() {
+          return color;
+      }
+
+      public int getYear() {
+          return year;
+      }
+
+      // Setter methods
+      public void setBrand(String brand) {
+          this.brand = brand;
+      }
+
+      public void setColor(String color) {
+          this.color = color;
+      }
+
+      public void setYear(int year) {
+          this.year = year;
+      }
+  }
+
+  ```
+
+#### Inheritance
+
+- Inheritance allows creating new classes (child classes) based on existing classes (parent classes). Child classes inherit the properties and behaviors of their parent classes, enabling code reuse and creating a hierarchical structure.
+
+  ```java
+  public class ElectricCar extends Car {
+      private int batteryCapacity;
+
+      // Additional behavior
+      void chargeBattery() {
+          System.out.println("Battery is charging.");
+      }
+  }
+  ```
+
+- method overloading vs overriding
+- super, this, final keyword
+
+#### Polymorphism
+
+- Polymorphism refers to the ability of objects to take on multiple forms. It allows a child class to override or extend the behaviors of its parent class, enabling dynamic binding of methods at runtime.
+
+#### Abstraction
+
+- Abstraction focuses on hiding the implementation details of a class and providing a simplified interface for interacting with objects. Abstract classes and interfaces are used to achieve abstraction.
+
+```java
+public abstract class Vehicle {
+    // Abstract method
+    abstract void startEngine();
+
+    // Concrete method
+    void stopEngine() {
+        System.out.println("Engine stopped!");
+    }
+}
+```
+
+- interface
+
+### 1.14 Exception Handling
 
 ## 2. Intermediate Java
 
