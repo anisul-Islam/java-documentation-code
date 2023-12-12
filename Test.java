@@ -1,65 +1,47 @@
-class Person {
-  private String name;
-  private int age;
+class Shape {
+  double dim1, dim2;
 
-  public void setName(String name) {
-    this.name = name;
+  Shape(double dim1, double dim2) {
+    this.dim1 = dim1;
+    this.dim2 = dim2;
   }
 
-  public void setAge(int age) {
-    this.age = age;
-  }
-
-  public String getName() {
-    return name;
-  }
-
-  public int getAge() {
-    return age;
-  }
-
-  public void printDetails() {
-    System.out.println("Name: " + name);
-    System.out.println("Age: " + age);
+  double area() {
+    return 0;
   }
 }
 
-class Teacher extends Person {
-  private double salary;
+class Rectangle extends Shape {
 
-  public void setSalary(double salary) {
-    this.salary = salary;
+  Rectangle(double dim1, double dim2) {
+    super(dim1, dim2);
   }
 
-  public double getSalary() {
-    return salary;
+  double area() {
+    return dim1 * dim2;
+  }
+}
+
+class Triangle extends Shape {
+
+  Triangle(double dim1, double dim2) {
+    super(dim1, dim2);
   }
 
-  public void printDetails() {
-    System.out.println("Name: " + getName());
-    System.out.println("Age: " + getAge());
-    System.out.println("salary: " + getSalary());
+  double area() {
+    return 0.5 * dim1 * dim2;
   }
 }
 
 class Test {
   public static void main(String[] args) {
-    Person p = new Person();
-    Teacher t1 = new Teacher();
+    Shape s = new Shape(0, 0);
+    System.out.println("Shape Area: " + s.area());
 
-    System.out.println(p instanceof Person);
-    System.out.println(p instanceof Teacher);
+    s = new Rectangle(10, 20);
+    System.out.println("Rectangle Area: " + s.area());
 
-    t1.setName("Anisul Islam");
-    t1.setAge(33);
-    t1.setSalary(4.500);
-    t1.printDetails();
-
-    Teacher t2 = new Teacher();
-    t2.setName("Anisul Islam");
-    t2.setAge(33);
-    t2.setSalary(4.500);
-    t2.printDetails();
+    s = new Triangle(10, 20);
+    System.out.println("Triangle Area: " + s.area());
   }
-
 }

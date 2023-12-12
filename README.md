@@ -20,7 +20,13 @@
    - [Control Statement](#110-control-statements)
    - [Arrays and ArrayList](#111-arrays-and-arraylist)
    - [String Manipulation](#112-string-manipulation)
-   - [Object Oriented Programming](#112-string-manipulation)
+   - [Object Oriented Programming](#113-object-oriented-programming)
+     - [Classes, Object, Constructor](#classes-object-constructor)
+     - [static variable, method and block](#static-variable-static-method-and-static-block)
+     - [OOP Key Feature 1: Encapsulation](#oop-key-feature-1-encapsulation)
+     - [OOP Key Feature 2: Inheritance](#oop-key-feature-2-inheritance)
+     - [super, this, final keyword](#super-this-final-keyword)
+   - [Object Oriented Programming](#113-object-oriented-programming)
 
 2. Intermediate
 3. All assignments
@@ -2083,132 +2089,124 @@ public class RandomGeneratorExample {
 
 - Object-Oriented Programming (OOP) is a programming paradigm that organizes code into objects, which represent real-world entities. Java is an object-oriented programming language that fully supports OOP principles. OOP key concepts: Inheritance, Encapsulation, Abstraction, Polymorphism
 
-#### Classes
+#### Classes, Object, Constructor
 
 - Class: A class is a template from which individual object is created. A class is a blueprint for creating objects. It defines the properties (attributes) and behaviors (methods) that objects of that class will have.
 
-```java
-public class Car {
-    // Properties
-    String brand;
-    String color;
-    int year;
+  ```java
+  public class Car {
+      // Properties
+      String brand;
+      String color;
+      int year;
 
-    // Behaviors
-    void startEngine() {
-        System.out.println("Engine started!");
-    }
+      // Behaviors
+      void startEngine() {
+          System.out.println("Engine started!");
+      }
 
-    void drive() {
-        System.out.println("Car is driving.");
-    }
-}
-```
-
-#### Object
+      void drive() {
+          System.out.println("Car is driving.");
+      }
+  }
+  ```
 
 - Object: Any class type variable is known as object. An object is an instance of a class. It represents a specific entity based on the class blueprint. Objects are created using the new keyword and the class constructor.
 
-```java
-public class Main {
-    public static void main(String[] args) {
-        // Create Car objects
-        Car car1 = new Car();
-        Car car2 = new Car();
+  ```java
+  public class Main {
+      public static void main(String[] args) {
+          // Create Car objects
+          Car car1 = new Car();
+          Car car2 = new Car();
 
-        // Set object properties
-        car1.brand = "Toyota";
-        car1.color = "Red";
-        car1.year = 2020;
+          // Set object properties
+          car1.brand = "Toyota";
+          car1.color = "Red";
+          car1.year = 2020;
 
-        car2.brand = "Honda";
-        car2.color = "Blue";
-        car2.year = 2019;
+          car2.brand = "Honda";
+          car2.color = "Blue";
+          car2.year = 2019;
 
-        // Invoke object behaviors
-        car1.startEngine();
-        car1.drive();
-        car2.startEngine();
-        car2.drive();
+          // Invoke object behaviors
+          car1.startEngine();
+          car1.drive();
+          car2.startEngine();
+          car2.drive();
 
-        // priniting cars details
-        System.out.println("Car1 details: ");
-        System.out.println("Brand: " + car1.brand);
-        System.out.println("Color: " + car1.color);
-        System.out.println("Year: " + car1.year);
+          // priniting cars details
+          System.out.println("Car1 details: ");
+          System.out.println("Brand: " + car1.brand);
+          System.out.println("Color: " + car1.color);
+          System.out.println("Year: " + car1.year);
 
-        System.out.println("Car2 details: ");
-        System.out.println("Brand: " + car2.brand);
-        System.out.println("Color: " + car2.color);
-        System.out.println("Year: " + car2.year);
-    }
-}
-```
+          System.out.println("Car2 details: ");
+          System.out.println("Brand: " + car2.brand);
+          System.out.println("Color: " + car2.color);
+          System.out.println("Year: " + car2.year);
+      }
+  }
+  ```
 
 - Introducing parametrized methods inside the car class
 
-```java
-class Car {
-  // properties
-  String brand, color;
-  int year;
+  ```java
+  class Car {
+    // properties
+    String brand, color;
+    int year;
 
-  // behaviours
-  void startEngine() {
-    System.out.println("Engine started");
+    // behaviours
+    void startEngine() {
+      System.out.println("Engine started");
+    }
+
+    void drive() {
+      System.out.println("Car is driving");
+    }
+
+    void setDetails(String brandName, String colorName, int manufactureYear) {
+      brand = brandName;
+      color = colorName;
+      year = manufactureYear;
+    }
+
+    void printDetails() {
+      System.out.println("Car details: ");
+      System.out.println("---------------");
+      System.out.println("Brand: " + brand);
+      System.out.println("Color: " + color);
+      System.out.println("Year: " + year);
+      System.out.println();
+    }
+
   }
 
-  void drive() {
-    System.out.println("Car is driving");
+  class Test {
+    public static void main(String[] args) {
+      // create Car objets
+      Car car1 = new Car();
+      Car car2 = new Car();
+
+      // set object properties
+      car1.setDetails("Toyota", "red", 2016);
+      car2.setDetails("Honda", "blue", 2019);
+
+      // priniting cars details
+      car1.printDetails();
+      car2.printDetails();
+
+      // Invoke object behaviors
+      car1.startEngine();
+      car1.drive();
+      car2.startEngine();
+      car2.drive();
+    }
   }
+  ```
 
-  void setDetails(String brandName, String colorName, int manufactureYear) {
-    brand = brandName;
-    color = colorName;
-    year = manufactureYear;
-  }
-
-  void printDetails() {
-    System.out.println("Car details: ");
-    System.out.println("---------------");
-    System.out.println("Brand: " + brand);
-    System.out.println("Color: " + color);
-    System.out.println("Year: " + year);
-    System.out.println();
-  }
-
-}
-
-class Test {
-  public static void main(String[] args) {
-    // create Car objets
-    Car car1 = new Car();
-    Car car2 = new Car();
-
-    // set object properties
-    car1.setDetails("Toyota", "red", 2016);
-    car2.setDetails("Honda", "blue", 2019);
-
-    // priniting cars details
-    car1.printDetails();
-    car2.printDetails();
-
-    // Invoke object behaviors
-    car1.startEngine();
-    car1.drive();
-    car2.startEngine();
-    car2.drive();
-  }
-}
-```
-
-#### Constructor
-
-- Constructor is a special type of method which can help us to initialize object.
-- Constructor does not need to be called.
-- The constructor has the same name as the class it belongs to.
-- It does not have a return type, not even void.
-- types: default and parametrized constructor
+- Constructor: Constructor is a special type of method which can help us to initialize object. Constructor does not need to be called. The constructor has the same name as the class it belongs to. It does not have a return type, not even void. types: default and parametrized constructor
 
   - Constructor example
 
@@ -2426,7 +2424,7 @@ class Test {
 
 - variable types: local (variable is decalred inside a method/constructor/block), instance variables (decalred inside class but outside the method and not decared as static) and class/static variable.
 
-#### Encapsulation
+#### OOP Key Feature 1: Encapsulation
 
 - Encapsulation is the practice of bundling related properties and behaviors within a class and providing access to them through methods. It helps in data hiding and protects the internal state of objects. 4 types of access modifiers: private, default, protected, public.
 
@@ -2465,7 +2463,7 @@ class Test {
 
   ```
 
-#### Inheritance
+#### OOP Key Feature 2: Inheritance
 
 - Inheritance allows creating new classes (child classes / sub classes / dervied classes) based on existing classes (parent classes /super classes /base classes). Child classes inherit the properties and behaviors of their parent classes, enabling code reuse and creating a hierarchical structure. For method overriding and make parent child relationship we need inheritance.
 
@@ -2701,13 +2699,320 @@ class Test {
     In summary, overloading is about providing multiple methods with the same name but different parameters within the same class, while overriding is about providing a new implementation of an inherited method in a subclass. Overloading is determined at compile-time based on the method's signature, while overriding is determined at runtime based on the actual object type.
 
 - Why Java does not support multiple inheritance?
-- super, this, final keyword
 
-#### Polymorphism
+#### super, this, final keyword
 
-- Polymorphism refers to the ability of objects to take on multiple forms. It allows a child class to override or extend the behaviors of its parent class, enabling dynamic binding of methods at runtime.
+- super keyword is used to access super class members such as properties, behaviours, constructors. super.variable, super.method(), super(param1,param2) for constructor. It has to be the first statement in method.
 
-#### Abstraction
+  - super keyword example
+
+  ```java
+  class Animal {
+      protected String name;
+
+      public Animal(String name) {
+          this.name = name;
+      }
+
+      public void eat() {
+          System.out.println("The animal is eating.");
+      }
+  }
+
+  class Dog extends Animal {
+      private String breed;
+
+      public Dog(String name, String breed) {
+          super(name); // Calling the superclass constructor using super()
+          this.breed = breed;
+      }
+
+      public void displayInfo() {
+          System.out.println("Name: " + super.name); // Accessing the superclass variable using super
+          super.eat(); // Invoking the superclass method using super
+          System.out.println("Breed: " + this.breed);
+      }
+  }
+
+  public class Main {
+      public static void main(String[] args) {
+          Dog dog = new Dog("Buddy", "Labrador");
+          dog.displayInfo();
+      }
+  }
+
+  // Another example
+      class Person {
+        private String name;
+        private int age;
+
+        public Person(String name, int age) {
+          this.name = name;
+          this.age = age;
+        }
+
+        public String getName() {
+          return name;
+        }
+
+        public int getAge() {
+          return age;
+        }
+
+        public void printDetails() {
+          System.out.println("Name: " + name);
+          System.out.println("Age: " + age);
+        }
+    }
+
+    class Teacher extends Person {
+      private double salary;
+
+      public Teacher(String name, int age, double salary) {
+        super(name, age);
+        this.salary = salary;
+      }
+
+      public void setSalary(double salary) {
+        this.salary = salary;
+      }
+
+      public double getSalary() {
+        return salary;
+      }
+
+      public void printDetails() {
+        super.printDetails();
+        System.out.println("salary: " + getSalary());
+      }
+    }
+
+    class Test {
+      public static void main(String[] args) {
+        Person p = new Person("Anisul Islam", 33);
+        Teacher t1 = new Teacher("Anisul Islam", 33, 4.500);
+
+        System.out.println(p instanceof Person);
+        System.out.println(p instanceof Teacher);
+
+        t1.setSalary(4.500);
+        t1.printDetails();
+
+        Teacher t2 = new Teacher("Emraj", 30, 4200);
+        t2.printDetails();
+      }
+    }
+  ```
+
+- this keyword: this keyword is a reference to the current instance of a class. It is primarily used to refer to the instance variables and methods of the current object. Here's an example to illustrate the usage of the this keyword:
+
+  - this keyword example
+
+  ```java
+  class Person {
+      private String name;
+      private int age;
+
+      public Person(String name, int age) {
+          this.name = name; // Assigning the name parameter to the instance variable using this
+          this.age = age; // Assigning the age parameter to the instance variable using this
+      }
+
+      public void displayInfo() {
+          System.out.println("Name: " + this.name); // Accessing the instance variable using this
+          System.out.println("Age: " + this.age); // Accessing the instance variable using this
+          this.sayHello(); // Invoking the instance method using this
+      }
+
+      public void sayHello() {
+          System.out.println("Hello, I'm " + this.name); // Accessing the instance variable using this
+      }
+  }
+
+  public class Main {
+      public static void main(String[] args) {
+          Person person = new Person("John", 25);
+          person.displayInfo();
+      }
+  }
+  ```
+
+- final keyword: In Java, the `final` keyword is used to declare a variable, method, or class as unchangeable or unextendable, depending on its usage. Final variables maintain constant values, final methods cannot be overridden, and final classes cannot be subclassed. Here are examples of how the `final` keyword can be used:
+
+  1. Final Variables: In this example, the PI variable is declared as final, indicating that its value cannot be changed.
+
+     ```java
+     public class Circle {
+         private final double PI = 3.14159; // Declaring a final variable
+
+         public double calculateArea(double radius) {
+             final double area = PI * radius * radius; // Using a final variable
+             return area;
+         }
+     }
+     ```
+
+  2. Final Methods: In the following example, the stop method is declared as final, which means it cannot be overridden by any subclass. The start method, on the other hand, can be overridden in a subclass.
+
+     ```java
+     public class Vehicle {
+         public void start() {
+             // Code to start the vehicle
+         }
+
+         public final void stop() {
+             // Code to stop the vehicle
+         }
+     }
+     ```
+
+  3. Final Classes: In this example, the `MathUtils` class is declared as `final`, indicating that it cannot be extended by any other class. It prevents inheritance and ensures that the class remains unchanged.
+
+     ```java
+     public final class MathUtils {
+         // Class implementation
+     }
+     ```
+
+#### OOP Key Feature 3: Polymorphism
+
+- Polymorphism (poly greek word means many and morphism greek word means form = many forms) refers to the ability of objects to take on multiple forms. It allows a child class to override or extend the behaviors of its parent class, enabling dynamic binding of methods at runtime. There are 2 types of polymorphism - Compile time (static polymorphism - method/constructor overloadin) and run time polymorphism (dynamic polymorphism - method overriding).
+
+  ```java
+  class Person {
+    private String name;
+    private int age;
+
+    public Person(String name, int age) {
+      this.name = name;
+      this.age = age;
+    }
+
+    public String getName() {
+      return name;
+    }
+
+    public int getAge() {
+      return age;
+    }
+
+    public void printDetails() {
+      System.out.println("Name: " + name);
+      System.out.println("Age: " + age);
+    }
+  }
+
+  class Teacher extends Person {
+    private double salary;
+
+    public Teacher(String name, int age, double salary) {
+      super(name, age);
+      this.salary = salary;
+    }
+
+    public void setSalary(double salary) {
+      this.salary = salary;
+    }
+
+    public double getSalary() {
+      return salary;
+    }
+
+    @Override
+    public void printDetails() {
+      super.printDetails();
+      System.out.println("salary: " + getSalary());
+    }
+  }
+
+  class Student extends Person {
+    double gpa;
+
+    Student(String name, int age, double gpa) {
+      super(name, age);
+      this.gpa = gpa;
+    }
+
+    @Override
+    public void printDetails() {
+      super.printDetails();
+      System.out.println("GPA: " + gpa);
+    }
+  }
+
+  class Test {
+    public static void main(String[] args) {
+      Person p = new Person("Anisul Islam", 33);
+      p.printDetails();
+
+      // super class object is used here as reference variable and its taking
+      // different forms based on the object that we are assigning
+      p = new Teacher("Anisul Islam", 33, 4.500);
+      p.printDetails();
+
+      p = new Student("Anisul Islam", 33, 3.5);
+      p.printDetails();
+      // Teacher t = new Teacher("Anisul Islam", 33, 4.500);
+      // Student s = new Student("Anisul Islam", 33, 3.5);
+
+    }
+
+  }
+  ```
+
+  - Another example of polymorphism
+
+  ```java
+    class Shape {
+      double dim1, dim2;
+
+      Shape(double dim1, double dim2) {
+        this.dim1 = dim1;
+        this.dim2 = dim2;
+      }
+
+      double area() {
+        return 0;
+      }
+    }
+
+    class Rectangle extends Shape {
+
+      Rectangle(double dim1, double dim2) {
+        super(dim1, dim2);
+      }
+
+      double area() {
+        return dim1 * dim2;
+      }
+    }
+
+    class Triangle extends Shape {
+
+      Triangle(double dim1, double dim2) {
+        super(dim1, dim2);
+      }
+
+      double area() {
+        return 0.5 * dim1 * dim2;
+      }
+    }
+
+    class Test {
+      public static void main(String[] args) {
+        Shape s = new Shape(0, 0);
+        System.out.println("Shape Area: " + s.area());
+
+        s = new Rectangle(10, 20);
+        System.out.println("Rectangle Area: " + s.area());
+
+        s = new Triangle(10, 20);
+        System.out.println("Triangle Area: " + s.area());
+      }
+    }
+  ```
+
+#### OOP Key Feature 4: Abstraction
 
 - Abstraction focuses on hiding the implementation details of a class and providing a simplified interface for interacting with objects. Abstract classes and interfaces are used to achieve abstraction.
 
