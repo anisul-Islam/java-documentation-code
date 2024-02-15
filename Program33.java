@@ -6,7 +6,7 @@ public class Program33 {
 
        try (Scanner input = new Scanner(System.in)) {
         
-        String[] countries = {"Bangladesh", "Pakistan", "England", "India"};
+        String[] countries = {"Bangladesh", "Pakistan", "England", "Palestine","Gaza","Afghanistan"};
 
         for (String country : countries) {
           System.out.println(country);
